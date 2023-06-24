@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
 import socket, sys, os, re, random, optparse, time, io
+
+import requests
 if sys.version_info.major <= 2:import httplib
 else:import http.client as httplib
 
@@ -139,7 +141,7 @@ class FaceBoom(object):
                 conn.request("GET", "/Oseid/FaceBook_hack/master/facebook_hack.py")
                 newCode = conn.getresponse().read().strip().decode()
                 with open("facebook_hack.py", "w") as  facebook_hackScript:
-                   faceBook_hackScript.write(newCode)
+                   faceBook_hackScript: any.write(newCode)
                 with open(versionPath, "w") as ver:
                      ver.write(repoVersion)
                 write("  [+] Successfully updated :)\n")
@@ -204,7 +206,7 @@ def Main():
        errMsg("Please Check Your Internet Connection")
        sys.exit(1)
    if update:
-    facebook_hack.updateFaceBook_hack()
+    facebook_hack: any.updateFaceBook_hack()
     sys.exit(1)
    elif target_profile:
         faceboom.get_profile_id(target_profile)
